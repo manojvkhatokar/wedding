@@ -1,0 +1,906 @@
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #29493c;
+  background: #e8e9df;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --ivory: #fff9ed;
+  --green: #29493c;
+  --saffron: #bb4f25;
+  --gold: #b28a44;
+  --serif: "Cormorant Garamond", Georgia, serif;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 26px;
+}
+body {
+  margin: 0;
+}
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+button,
+input {
+  font: inherit;
+}
+button,
+a {
+  touch-action: manipulation;
+}
+button {
+  cursor: pointer;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  color: inherit;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid #dc8c32;
+  outline-offset: 6px;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+svg {
+  display: block;
+}
+::selection {
+  background: #e6bc72;
+  color: #29493c;
+}
+.invitation-page {
+  position: relative;
+  max-width: 520px;
+  margin: 0 auto;
+  background: var(--ivory);
+  overflow: clip;
+  box-shadow: 0 0 100px #182c2020;
+  isolation: isolate;
+}
+.reading-progress {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 3px;
+  background: #d99932;
+  z-index: 30;
+  transform-origin: left;
+}
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  top: 12px;
+  left: 12px;
+  padding: 12px 20px;
+  background: var(--green);
+  color: var(--ivory);
+  transform: translateY(-200%);
+}
+.skip-link:focus {
+  transform: none;
+}
+.hero {
+  position: relative;
+  min-height: 850px;
+  text-align: center;
+  overflow: hidden;
+  padding-top: 70px;
+  background: var(--ivory);
+}
+.toran {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 170px;
+  object-fit: fill;
+  z-index: 2;
+  pointer-events: none;
+  transform-origin: top;
+  animation: toran-sway 9s ease-in-out infinite alternate;
+}
+.hero-content {
+  position: relative;
+  z-index: 3;
+}
+.blessing {
+  color: var(--saffron);
+}
+.blessing p {
+  font-family: var(--serif);
+  font-size: 12px;
+  line-height: 1.7;
+}
+.ganesha {
+  height: 44px;
+  width: 40px;
+  margin: 8px auto 0;
+  color: #c38223;
+}
+.monogram {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 11px;
+  font-family: var(--serif);
+  font-size: 23px;
+  color: #946c31;
+  letter-spacing: 3px;
+  width: 66px;
+  height: 66px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  padding-left: 3px;
+  margin: 10px auto 14px;
+}
+
+h1 {
+  font-weight: 400;
+  margin: 4px 0 0;
+}
+.name {
+  display: block;
+  font-family: var(--serif);
+  font-size: clamp(24px, 11vw, 56px);
+  line-height: 1.08;
+  font-weight: 400;
+  letter-spacing: -1.5px;
+  color: var(--saffron);
+  width: calc(100% - 36px);
+  margin-inline: auto;
+  white-space: nowrap;
+}
+.weds {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font: italic 34px/1.1 var(--serif);
+  padding: 9px 0 12px;
+  color: var(--green);
+}
+.weds i {
+  width: 36px;
+  height: 1px;
+  background: var(--gold);
+  position: relative;
+}
+.weds i:before {
+  content: "✧";
+  font-size: 15px;
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  color: var(--gold);
+}
+.weds i:last-child:before {
+  left: auto;
+  right: -8px;
+}
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--gold);
+  height: 27px;
+}
+.ornament > span {
+  height: 1px;
+  width: 42px;
+  background: currentColor;
+  opacity: 0.85;
+}
+.ornament > svg {
+  width: 16px;
+  height: 16px;
+}
+.hero .ornament {
+  margin-top: 0;
+}
+.wedding-heading {
+  font-family: var(--serif);
+  font-size: 25px;
+  color: var(--saffron);
+  line-height: 1.4;
+  margin-top: 4px;
+}
+.hero-date {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2.6px;
+  margin: 4px 0 16px;
+}
+.button {
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 10px 27px;
+  font-family: var(--serif);
+  font-size: 21px;
+  line-height: 1.1;
+  border-radius: 5px;
+  transition:
+    background 0.25s,
+    transform 0.25s,
+    box-shadow 0.25s;
+}
+.button svg {
+  width: 18px;
+  height: 18px;
+}
+.button:active {
+  transform: scale(0.97);
+}
+.primary {
+  background: var(--green);
+  color: var(--ivory);
+  border: 1px solid #a49966;
+  box-shadow: 0 4px 18px #29493c15;
+}
+.primary:hover {
+  background: #365f4d;
+  box-shadow: 0 5px 20px #29493c25;
+}
+.baraat {
+  position: relative;
+  width: 116%;
+  max-width: none;
+  margin: -25px 0 0 -8%;
+  pointer-events: none;
+  z-index: 1;
+}
+.baraat img {
+  width: 100%;
+  height: auto;
+  mix-blend-mode: multiply;
+}
+.scroll-note {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  font-size: 8px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 5px 20px 25px;
+  margin-top: -8px;
+  min-height: 44px;
+}
+.scroll-note svg {
+  width: 12px;
+  height: 16px;
+  animation: arrow-drift 2s ease-in-out infinite;
+}
+.invitation {
+  position: relative;
+  text-align: center;
+  padding: 45px 26px 48px;
+  background: var(--ivory);
+}
+.section-ornament {
+  height: 34px;
+  margin: 0 auto 25px;
+}
+.section-ornament > span {
+  width: 64px;
+}
+.section-ornament > svg {
+  width: 26px;
+  height: 26px;
+}
+h2 {
+  font: 400 49px/1.05 var(--serif);
+  letter-spacing: -1.7px;
+  color: var(--saffron);
+}
+h2 em {
+  display: block;
+  font-size: 33px;
+  line-height: 1.14;
+  letter-spacing: -0.9px;
+  font-weight: 400;
+  color: var(--green);
+  margin-top: 5px;
+}
+.invitation-copy {
+  font: 400 17px/1.6 var(--serif);
+  max-width: 325px;
+  margin: 25px auto 0;
+  text-wrap: pretty;
+}
+.couple-illustration {
+  position: relative;
+  width: calc(100% + 52px);
+  max-width: none;
+  margin: 8px -26px 0;
+  transform-origin: center bottom;
+}
+.couple-illustration img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 3%,
+    black 94%,
+    transparent
+  );
+}
+.tradition {
+  position: relative;
+  font: italic 23px/1.3 var(--serif);
+  margin: 11px auto 14px;
+  z-index: 1;
+}
+.invitation > .ornament {
+  margin-bottom: 0;
+}
+.celebration {
+  position: relative;
+  background: var(--green);
+  color: var(--ivory);
+  padding: 43px 25px 0;
+  text-align: center;
+}
+.celebration:before,
+.celebration:after {
+  content: "";
+  position: absolute;
+  width: 130px;
+  height: 200px;
+  pointer-events: none;
+  opacity: 0.085;
+  background: repeating-radial-gradient(
+    ellipse at bottom,
+    transparent 0 12px,
+    #ffe5a4 13px 14px,
+    transparent 15px 24px
+  );
+  border-radius: 100%;
+  transform: rotate(-30deg);
+  right: -85px;
+  top: 170px;
+}
+.celebration:after {
+  right: auto;
+  left: -95px;
+  top: auto;
+  bottom: 80px;
+  transform: rotate(30deg);
+}
+.celebration .ornament {
+  color: #d1ab63;
+}
+.celebration .section-ornament {
+  margin-bottom: 28px;
+}
+.celebration h2 {
+  font-size: 39px;
+  color: var(--ivory);
+  letter-spacing: -1px;
+}
+.celebration h2 em {
+  font-size: 29px;
+  color: var(--ivory);
+  letter-spacing: -0.6px;
+  margin-top: 8px;
+}
+.small-ornament {
+  margin: 18px auto 27px;
+}
+.small-ornament > span {
+  width: 30px;
+}
+.small-ornament > svg {
+  width: 12px;
+  height: 12px;
+}
+.events {
+  border-top: 1px solid #d3b37288;
+}
+.event {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(104px, 30vw, 146px);
+  align-items: center;
+  text-align: left;
+  padding: 24px 0;
+  gap: 16px;
+  border-bottom: 1px solid #d3b37288;
+}
+.event-details {
+  min-width: 0;
+}
+.event-illustration {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: contain;
+  mask-image: radial-gradient(ellipse 70% 70% at center, black 55%, transparent 100%);
+}
+.event--wedding {
+  grid-template-columns: clamp(104px, 30vw, 146px) minmax(0, 1fr);
+}
+.event--wedding .event-illustration {
+  grid-column: 1;
+  grid-row: 1;
+}
+.event--wedding .event-details {
+  grid-column: 2;
+  grid-row: 1;
+}
+.event-label {
+  font-size: 9px;
+  line-height: 1.7;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #f0d398;
+}
+.event h3 {
+  font: 400 32px/1.15 var(--serif);
+  margin: 4px 0;
+}
+.event-details > p:last-child {
+  font: 400 15px/1.5 var(--serif);
+  color: #ece8d7;
+}
+.venue {
+  padding: 28px 0 29px;
+}
+.label {
+  text-transform: uppercase;
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: #ead29b;
+}
+.venue > svg {
+  height: 28px;
+  width: 25px;
+  margin: 12px auto 9px;
+  color: #efcf86;
+}
+.venue h3 {
+  font: 400 27px/1.2 var(--serif);
+  max-width: 345px;
+  margin: 0 auto 19px;
+  text-wrap: balance;
+}
+.outlined {
+  color: #fff5dc;
+  border: 1px solid #d5b878;
+  border-radius: 30px;
+  font-size: 18px;
+  min-height: 43px;
+  padding: 10px 23px;
+}
+.outlined:hover {
+  background: #ffffff10;
+}
+.guest-actions {
+  display: flex;
+  justify-content: center;
+  border-block: 1px solid #d3b37288;
+  padding: 10px 0;
+  gap: 0;
+}
+.guest-actions button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 0;
+  background: transparent;
+  min-height: 42px;
+  font: 400 14px/1.2 var(--serif);
+  width: 50%;
+  padding: 4px 7px;
+}
+.guest-actions button:first-child {
+  border-right: 1px solid #d3b37270;
+}
+.guest-actions svg {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+}
+.guest-actions button > svg:last-child {
+  width: 12px;
+}
+.guest-actions button:hover {
+  color: #efc774;
+}
+.guest-actions button > span {
+  font-size: 18px;
+}
+.share-fallback {
+  display: grid;
+  gap: 10px;
+  padding: 20px 0;
+  font-size: 12px;
+}
+.share-fallback input {
+  width: 100%;
+  min-height: 44px;
+  padding: 8px;
+  border: 1px solid #cfb46f;
+  background: var(--ivory);
+  color: var(--green);
+}
+.share-fallback button {
+  padding: 10px;
+  background: none;
+  border: 1px solid #cfb46f;
+}
+.toast {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translate(-50%, 12px);
+  max-width: calc(100% - 40px);
+  width: 340px;
+  padding: 14px 20px;
+  border: 1px solid #c8a465;
+  border-radius: 6px;
+  background: var(--ivory);
+  color: var(--green);
+  font-size: 12px;
+  line-height: 1.6;
+  text-align: center;
+  opacity: 0;
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
+  pointer-events: none;
+  z-index: 40;
+  box-shadow: 0 5px 30px #0002;
+}
+.toast.visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+footer {
+  position: relative;
+  padding: 26px 0 57px;
+}
+footer .ornament {
+  margin: 0 auto 10px;
+}
+footer .ornament > span {
+  width: 28px;
+}
+.with-love {
+  font: italic 20px/1.4 var(--serif);
+}
+.footer-names {
+  font: 400 31px/1.2 var(--serif);
+  margin-top: 3px;
+}
+.footer-message {
+  font: 16px/1.8 var(--serif);
+  color: #e4cb90;
+  margin-top: 14px;
+}
+.back-top {
+  display: inline-block;
+  font-size: 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 13px;
+  padding: 10px;
+  opacity: 0.7;
+}
+.petal-layer {
+  position: fixed;
+  inset: 0;
+  max-width: 520px;
+  margin: auto;
+  overflow: hidden;
+  z-index: 10;
+  pointer-events: none;
+  contain: strict;
+}
+.falling-flower {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--size);
+  height: var(--size);
+  will-change: transform;
+  opacity: 0;
+}
+.falling-flower > svg {
+  width: 100%;
+  height: 100%;
+}
+.atmosphere {
+  position: fixed;
+  bottom: max(15px, env(safe-area-inset-bottom));
+  right: max(15px, calc((100vw - 520px) / 2 + 15px));
+  z-index: 20;
+  display: flex;
+  gap: 6px;
+}
+.atmosphere > button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fff9edf0;
+  color: var(--green);
+  border: 1px solid #b28a4466;
+  box-shadow: 0 2px 12px #122a2010;
+}
+.atmosphere > button > svg {
+  width: 15px;
+  height: 15px;
+}
+.sound-bars {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 16px;
+}
+.sound-bars i {
+  display: block;
+  width: 2px;
+  height: 6px;
+  background: currentColor;
+  border-radius: 3px;
+}
+.sound-bars i:nth-child(2) {
+  height: 13px;
+}
+.sound-bars i:nth-child(3) {
+  height: 10px;
+}
+.sound-bars i:nth-child(4) {
+  height: 5px;
+}
+.sound-playing .sound-bars i {
+  animation: sound-wave 1s ease-in-out infinite alternate;
+}
+.sound-playing .sound-bars i:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.sound-playing .sound-bars i:nth-child(3) {
+  animation-delay: -0.6s;
+}
+.audio-error {
+  position: absolute;
+  bottom: 48px;
+  right: 0;
+  width: 220px;
+  background: var(--ivory);
+  font-size: 11px;
+  padding: 10px;
+  color: var(--green);
+}
+.motion-paused * {
+  animation-play-state: paused !important;
+}
+.motion-paused .hero-content,
+.motion-paused .baraat,
+.motion-paused .couple-illustration {
+  transform: none !important;
+}
+@keyframes toran-sway {
+  from {
+    transform: rotate(-0.4deg);
+  }
+  to {
+    transform: rotate(0.4deg);
+  }
+}
+@keyframes arrow-drift {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+}
+@keyframes sound-wave {
+  from {
+    transform: scaleY(0.4);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+@media (min-width: 521px) {
+  body {
+    background:
+      radial-gradient(ellipse at 10% 15%, #b1bc9f40, transparent 50%),
+      radial-gradient(ellipse at 90% 70%, #b7a17c33, transparent 50%), #e8e9df;
+  }
+  .invitation-page {
+    border-inline: 1px solid #a78b5725;
+  }
+  .hero {
+    padding-top: 92px;
+    min-height: 1000px;
+  }
+  .toran {
+    height: 210px;
+  }
+  .blessing p {
+    font-size: 14px;
+  }
+  .ganesha {
+    height: 52px;
+    width: 46px;
+  }
+  .monogram {
+    margin: 10px auto 14px;
+  }
+  .hero-date {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  .baraat {
+    margin-top: -20px;
+  }
+  .invitation {
+    padding-inline: 38px;
+  }
+  .couple-illustration {
+    width: calc(100% + 76px);
+    margin-inline: -38px;
+  }
+  .invitation-copy {
+    font-size: 20px;
+    max-width: 370px;
+  }
+  .celebration {
+    padding-inline: 35px;
+  }
+  .celebration h2 {
+    font-size: 46px;
+  }
+  .celebration h2 em {
+    font-size: 35px;
+  }
+  .event {
+    padding-block: 30px;
+  }
+  .event-label {
+    font-size: 10px;
+  }
+  .event h3 {
+    font-size: 37px;
+  }
+  .event-details > p:last-child {
+    font-size: 17px;
+  }
+  .venue h3 {
+    font-size: 32px;
+  }
+  .guest-actions button {
+    font-size: 17px;
+  }
+}
+@media (max-width: 360px) {
+  .hero {
+    padding-top: 62px;
+    min-height: 780px;
+  }
+  .toran {
+    height: 145px;
+  }
+  .blessing p {
+    font-size: 11px;
+  }
+  .ganesha {
+    height: 36px;
+  }
+  .weds {
+    font-size: 43px;
+  }
+  .hero-date {
+    font-size: 10px;
+  }
+  .hero .button {
+    font-size: 19px;
+    min-height: 44px;
+  }
+  .baraat {
+    margin-top: -17px;
+  }
+  .invitation {
+    padding-inline: 20px;
+  }
+  h2 {
+    font-size: 43px;
+  }
+  h2 em {
+    font-size: 29px;
+  }
+  .invitation-copy {
+    font-size: 16px;
+  }
+  .couple-illustration {
+    width: calc(100% + 40px);
+    margin-inline: -20px;
+  }
+  .celebration {
+    padding-inline: 20px;
+  }
+  .celebration h2 {
+    font-size: 35px;
+  }
+  .celebration h2 em {
+    font-size: 25px;
+  }
+  .event {
+    gap: 12px;
+  }
+  .event-label {
+    font-size: 9px;
+    letter-spacing: 0.7px;
+  }
+  .event h3 {
+    font-size: 28px;
+  }
+  .event-details > p:last-child {
+    font-size: 13px;
+  }
+  .venue h3 {
+    font-size: 25px;
+  }
+  .guest-actions button {
+    font-size: 12px;
+    gap: 5px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .petal-layer {
+    display: none;
+  }
+  .hero-content,
+  .baraat,
+  .couple-illustration {
+    transform: none !important;
+  }
+}
+
+.hero-content > .button {
+  margin-top: 12px;
+}
