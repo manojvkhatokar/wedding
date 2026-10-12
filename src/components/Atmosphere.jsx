@@ -10,9 +10,12 @@ export default function Atmosphere({ paused, setPaused }) {
   useEffect(() => {
     const track = audio.current;
     let disposed = false;
+    let starting = false;
+    let lastScrollAttempt = -Infinity;
     track.volume = 0.45;
     async function play() {
-      if (!wantsMusic.current || document.hidden) return;
+      if (!wantsMusic.current || document.hidden || starting || !track.paused) return;
+      starting = true;
       try {
         await track.play();
         if (!disposed) setError("");
@@ -21,6 +24,8 @@ export default function Atmosphere({ paused, setPaused }) {
         setError(error.name === "NotAllowedError"
           ? ""
           : "Music couldn’t load. Tap the music button to retry.");
+      } finally {
+        starting = false;
       }
     }
     startMusic.current = play;
@@ -29,8 +34,14 @@ export default function Atmosphere({ paused, setPaused }) {
     const onError = () => setError("Music couldn’t load. Tap the music button to retry.");
     const onInteraction = (event) => {
       if (event.target instanceof Element && event.target.closest("[data-music-control]")) return;
-      if (event.type === "keydown" && event.key !== "Enter" && event.key !== " ") return;
+      if (event.type === "keydown" && !["Enter", " ", "ArrowDown", "ArrowUp", "PageDown", "PageUp", "Home", "End"].includes(event.key)) return;
       if (track.paused && wantsMusic.current) void play();
+    };
+    const onScrollIntent = (event) => {
+      const now = performance.now();
+      if (now - lastScrollAttempt < 750) return;
+      lastScrollAttempt = now;
+      onInteraction(event);
     };
     const onVisibility = () => {
       if (document.hidden) track.pause();
@@ -40,6 +51,9 @@ export default function Atmosphere({ paused, setPaused }) {
     track.addEventListener("pause", onPause);
     track.addEventListener("error", onError);
     document.addEventListener("touchend", onInteraction, { passive: true });
+    document.addEventListener("touchstart", onInteraction, { passive: true });
+    document.addEventListener("touchmove", onScrollIntent, { passive: true });
+    document.addEventListener("wheel", onScrollIntent, { passive: true });
     document.addEventListener("click", onInteraction);
     document.addEventListener("keydown", onInteraction);
     document.addEventListener("visibilitychange", onVisibility);
@@ -50,6 +64,9 @@ export default function Atmosphere({ paused, setPaused }) {
       track.removeEventListener("pause", onPause);
       track.removeEventListener("error", onError);
       document.removeEventListener("touchend", onInteraction);
+      document.removeEventListener("touchstart", onInteraction);
+      document.removeEventListener("touchmove", onScrollIntent);
+      document.removeEventListener("wheel", onScrollIntent);
       document.removeEventListener("click", onInteraction);
       document.removeEventListener("keydown", onInteraction);
       document.removeEventListener("visibilitychange", onVisibility);
