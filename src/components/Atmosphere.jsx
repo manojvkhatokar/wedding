@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-export default function Atmosphere({ paused, setPaused }) {
+export default function Atmosphere() {
   const [playing, setPlaying] = useState(false);
   const [error, setError] = useState("");
   const audio = useRef(null);
@@ -89,28 +89,6 @@ export default function Atmosphere({ paused, setPaused }) {
   return (
     <div className="atmosphere">
       <audio ref={audio} src="/audio/wedding-dhol.mp3" autoPlay loop preload="auto" aria-hidden="true" />
-      <button
-        onClick={() => setPaused(!paused)}
-        aria-pressed={paused}
-        aria-label={paused ? "Resume animations" : "Pause animations"}
-        title={paused ? "Resume animations" : "Pause animations"}
-      >
-        {paused ? (
-          <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-            <path d="m7 4 9 6-9 6Z" />
-          </svg>
-        ) : (
-          <svg
-            viewBox="0 0 20 20"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            aria-hidden="true"
-          >
-            <path d="M7 4v12M13 4v12" />
-          </svg>
-        )}
-      </button>
       <button
         data-music-control
         className={playing ? "sound-playing" : ""}

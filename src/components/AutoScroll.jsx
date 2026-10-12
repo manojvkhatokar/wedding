@@ -14,6 +14,14 @@ export default function AutoScroll({ disabled }) {
     let position = window.scrollY;
     let ready = false;
     let manualUntil = 0;
+    const content = document.querySelector(".scroll-content");
+
+    function alignContent() {
+      const remainder = position - window.scrollY;
+      content.style.transform = Math.abs(remainder) > 0.001
+        ? `translate3d(0, ${-remainder}px, 0)`
+        : "";
+    }
 
     function schedule() {
       if (ready && !frame && !document.hidden && !preference.matches) {
@@ -30,12 +38,14 @@ export default function AutoScroll({ disabled }) {
       const end = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
       if (time < manualUntil) {
         position = window.scrollY;
+        alignContent();
         frame = requestAnimationFrame(tick);
         return;
       }
       position = Math.min(end, position + elapsed * PIXELS_PER_SECOND);
       // Fractional accumulation gives steady motion without CSS smooth-scroll restarts.
       window.scrollTo({ top: position, behavior: "instant" });
+      alignContent();
       if (position < end) frame = requestAnimationFrame(tick);
     }
 
@@ -50,6 +60,7 @@ export default function AutoScroll({ disabled }) {
     function yieldToManualScroll() {
       manualUntil = performance.now() + MANUAL_SCROLL_PAUSE;
       position = window.scrollY;
+      alignContent();
       schedule();
     }
 
@@ -77,6 +88,7 @@ export default function AutoScroll({ disabled }) {
       cancelAnimationFrame(frame);
       frame = 0;
       position = window.scrollY;
+      alignContent();
       schedule();
     }
 
@@ -97,6 +109,7 @@ export default function AutoScroll({ disabled }) {
     return () => {
       clearTimeout(timer);
       cancelAnimationFrame(frame);
+      content.style.transform = "";
       window.removeEventListener("load", begin);
       window.removeEventListener("wheel", yieldToManualScroll);
       window.removeEventListener("touchmove", yieldToManualScroll);

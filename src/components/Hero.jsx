@@ -16,7 +16,6 @@ export default function Hero() {
     offset: ["start start", "end start"],
   });
   const titleY = useTransform(scrollYProgress, [0, 1], [0, 100]);
-  const processionX = useTransform(scrollYProgress, [0, 1], ["0%", "-8%"]);
   const fade = useTransform(scrollYProgress, [0, 0.85], [1, 0.2]);
   return (
     <section
@@ -45,7 +44,7 @@ export default function Hero() {
           <Ganesha />
         </motion.div>
         <div className="monogram" aria-label="Manoj and Chethana">
-          M C
+          <span>M</span><span>C</span>
         </div>
         <motion.h1
           id="couple-names"
@@ -63,20 +62,16 @@ export default function Hero() {
           <span className="name">{wedding.bride}</span>
         </motion.h1>
         <Ornament />
-        <a className="button primary" href="#invitation">
-          You’re invited <Arrow />
-        </a>
       </motion.div>
-      <motion.div
-        className="baraat"
-        style={reduce ? undefined : { x: processionX }}
-      >
+      <div className="hero-couple">
         <img
-          src="/images/baraat-ivory.webp"
-          alt="A relaxed baraat with the groom in royal blue on a raised open-car seat, an umbrella attendant, dhol-tasha musicians, and friends in shirts and trousers"
+          src="/images/couple-ivory.webp"
+          alt="Watercolor illustration of a Maharashtrian bride and groom in green nauvari and saffron pheta, wearing mundavalya and exchanging garlands"
+          width="900"
+          height="1125"
           fetchPriority="high"
         />
-      </motion.div>
+      </div>
       <a className="scroll-note" href="#invitation">
         <span>Let the celebrations begin</span>
         <Arrow />

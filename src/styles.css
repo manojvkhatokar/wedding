@@ -75,6 +75,9 @@ svg {
   box-shadow: 0 0 100px #182c2020;
   isolation: isolate;
 }
+.scroll-content {
+  will-change: transform;
+}
 .reading-progress {
   position: fixed;
   left: 0;
@@ -140,16 +143,15 @@ svg {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 11px;
+  gap: 2px;
   font-family: var(--serif);
   font-size: 23px;
   color: #946c31;
-  letter-spacing: 3px;
+  letter-spacing: 0;
   width: 66px;
   height: 66px;
   border: 1px solid var(--gold);
   border-radius: 50%;
-  padding-left: 3px;
   margin: 10px auto 14px;
 }
 
@@ -264,15 +266,14 @@ h1 {
   background: #365f4d;
   box-shadow: 0 5px 20px #29493c25;
 }
-.baraat {
+.hero-couple {
   position: relative;
-  width: 116%;
-  max-width: none;
-  margin: -25px 0 0 -8%;
+  width: min(100%, 430px);
+  margin: 10px auto -6px;
   pointer-events: none;
   z-index: 1;
 }
-.baraat img {
+.hero-couple img {
   width: 100%;
   height: auto;
   mix-blend-mode: multiply;
@@ -333,14 +334,14 @@ h2 em {
   margin: 25px auto 0;
   text-wrap: pretty;
 }
-.couple-illustration {
+.invitation-baraat {
   position: relative;
   width: calc(100% + 52px);
   max-width: none;
   margin: 8px -26px 0;
   transform-origin: center bottom;
 }
-.couple-illustration img {
+.invitation-baraat img {
   width: 100%;
   height: auto;
   object-fit: contain;
@@ -703,14 +704,6 @@ footer .ornament > span {
   padding: 10px;
   color: var(--green);
 }
-.motion-paused * {
-  animation-play-state: paused !important;
-}
-.motion-paused .hero-content,
-.motion-paused .baraat,
-.motion-paused .couple-illustration {
-  transform: none !important;
-}
 @keyframes toran-sway {
   from {
     transform: rotate(-0.4deg);
@@ -766,13 +759,13 @@ footer .ornament > span {
     font-size: 14px;
     margin-bottom: 20px;
   }
-  .baraat {
-    margin-top: -20px;
+  .hero-couple {
+    margin-top: 12px;
   }
   .invitation {
     padding-inline: 38px;
   }
-  .couple-illustration {
+  .invitation-baraat {
     width: calc(100% + 76px);
     margin-inline: -38px;
   }
@@ -832,8 +825,8 @@ footer .ornament > span {
     font-size: 19px;
     min-height: 44px;
   }
-  .baraat {
-    margin-top: -17px;
+  .hero-couple {
+    margin-top: 10px;
   }
   .invitation {
     padding-inline: 20px;
@@ -847,7 +840,7 @@ footer .ornament > span {
   .invitation-copy {
     font-size: 16px;
   }
-  .couple-illustration {
+  .invitation-baraat {
     width: calc(100% + 40px);
     margin-inline: -20px;
   }
@@ -895,12 +888,8 @@ footer .ornament > span {
     display: none;
   }
   .hero-content,
-  .baraat,
-  .couple-illustration {
+  .hero-couple,
+  .invitation-baraat {
     transform: none !important;
   }
-}
-
-.hero-content > .button {
-  margin-top: 12px;
 }

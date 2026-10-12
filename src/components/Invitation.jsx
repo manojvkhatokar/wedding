@@ -36,14 +36,14 @@ export default function Invitation() {
         </p>
       </Reveal>
       <motion.div
-        className="couple-illustration"
+        className="invitation-baraat"
         style={reduce ? undefined : { scale }}
       >
         <img
-          src="/images/couple-ivory.webp"
-          alt="Watercolor illustration of a Maharashtrian bride and groom in green nauvari and saffron pheta, wearing mundavalya and exchanging garlands"
-          width="800"
-          height="1000"
+          src="/images/baraat-ivory.webp"
+          alt="A relaxed baraat with the groom in royal blue on a raised open-car seat, an umbrella attendant, dhol-tasha musicians, and friends in shirts and trousers"
+          width="1200"
+          height="800"
           loading="lazy"
         />
       </motion.div>

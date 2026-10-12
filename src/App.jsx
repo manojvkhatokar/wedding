@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   MotionConfig,
   motion,
@@ -13,26 +12,27 @@ import Atmosphere from "./components/Atmosphere";
 import AutoScroll from "./components/AutoScroll";
 
 export default function App() {
-  const [paused, setPaused] = useState(false);
   const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll();
   return (
-    <MotionConfig reducedMotion={paused ? "always" : "user"}>
-      <AutoScroll disabled={paused || reduce} />
+    <MotionConfig reducedMotion="user">
+      <AutoScroll disabled={reduce} />
       <a className="skip-link" href="#celebration">
         Skip to wedding details
       </a>
-      <main className={`invitation-page ${paused ? "motion-paused" : ""}`}>
+      <main className="invitation-page">
         <motion.div
           className="reading-progress"
           style={{ scaleX: scrollYProgress }}
           aria-hidden="true"
         />
-        {!reduce && !paused ? <Petals /> : null}
-        <Hero />
-        <Invitation />
-        <Celebration />
-        <Atmosphere paused={paused} setPaused={setPaused} />
+        {!reduce ? <Petals /> : null}
+        <div className="scroll-content">
+          <Hero />
+          <Invitation />
+          <Celebration />
+        </div>
+        <Atmosphere />
       </main>
     </MotionConfig>
   );
