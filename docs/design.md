@@ -41,3 +41,9 @@ Artwork order update: show the traditional bride and groom illustration beneath 
 Auto-scroll smoothness: the invitation content receives a fractional-pixel translation to fill the gaps between browser-rounded scroll positions. Fixed music and flower layers stay outside that transformed content. Manual scroll and anchor navigation clear the translation before resuming.
 
 Floral header revision: `public/images/toran-floral.webp` replaces the mango-leaf toran. Layered marigolds, jasmine strings, gold beads, and small brass bells form a fuller canopy and side drapes, with the center kept open above the invitation text. The earlier toran remains only as a historical asset.
+
+Curtain reveal: a full-viewport burgundy and gold fabric cover appears on every page load. The cover uses the MC monogram and one tap target. Tapping splits the curtains, launches two confetti bursts, starts music through the existing interaction handler where the browser permits it, and reveals the invitation after the animation. The page is inert and locked from scrolling until the reveal finishes; auto-scroll begins its normal reading delay afterward. Reduced-motion users get an immediate reveal without confetti.
+
+Curtain readability: a soft, dark backdrop blur sits behind the center content, with additional blur inside the monogram seal and tap prompt. The fabric folds remain visible around the text while the gold seam no longer crosses the lettering.
+
+Falling flower density: reduce the fixed particle set from 72 to 36. Keep the existing varied positions, scroll-linked speed, and copy occlusion.

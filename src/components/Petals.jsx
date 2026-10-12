@@ -7,7 +7,7 @@ function random(seed) {
   return value - Math.floor(value);
 }
 
-const flowers = Array.from({ length: 72 }, (_, i) => ({
+const flowers = Array.from({ length: 36 }, (_, i) => ({
   offset: random(i + 1),
   pace: 0.7 + random(i + 101) * 0.65,
   sway: 8 + random(i + 201) * 22,
