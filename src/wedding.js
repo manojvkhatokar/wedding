@@ -98,3 +98,16 @@ export function downloadCalendar() {
   anchor.remove();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
+
+export function googleCalendarUrl() {
+  const first = wedding.events[0];
+  const last = wedding.events.at(-1);
+  const params = new URLSearchParams({
+    action: "TEMPLATE",
+    text: "Manoj & Chethana — Reception & Wedding",
+    dates: `${first.date.replaceAll("-", "")}/${last.nextDate.replaceAll("-", "")}`,
+    details: "Reception: Sunday, 29 November 2026\nWedding: Monday, 30 November 2026\nEvent times will be shared by the families.",
+    location: wedding.venue,
+  });
+  return `https://calendar.google.com/calendar/r/eventedit?${params}`;
+}

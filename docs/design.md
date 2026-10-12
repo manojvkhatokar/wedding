@@ -48,4 +48,6 @@ Curtain readability: a soft, dark backdrop blur sits behind the center content, 
 
 Auto-scroll after the curtain: begin 900 ms after the curtain finishes opening, instead of restarting the old five-second reading delay. Continue at 70 pixels per second, while preserving manual-scroll priority and reduced-motion behavior.
 
+Calendar save flow: “Save the dates” opens two choices. Google Calendar opens one ready-to-save all-day event covering 29–30 November 2026, with both celebrations listed in the description and the venue prefilled. The `.ics` option still downloads two separate all-day events for other calendar apps. All-day wording is intentional until event times are available. The Google event editor URL follows Google's documented `action=TEMPLATE` link pattern.
+
 Falling flower density: reduce the fixed particle set from 72 to 36. Keep the existing varied positions, scroll-linked speed, and copy occlusion.

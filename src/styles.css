@@ -540,6 +540,56 @@ h2 em {
 .guest-actions button > span {
   font-size: 18px;
 }
+.calendar-options {
+  display: grid;
+  gap: 8px;
+  padding: 16px 0 24px;
+  border-bottom: 1px solid #d3b37288;
+  text-align: left;
+}
+.calendar-options-title {
+  font: 400 24px/1.1 var(--serif);
+  color: #fff6de;
+  text-align: center;
+  margin-bottom: 5px;
+}
+.calendar-options > a,
+.calendar-options > button {
+  display: grid;
+  gap: 3px;
+  width: 100%;
+  padding: 13px 16px;
+  border: 1px solid #d3b372a8;
+  border-radius: 5px;
+  background: #ffffff0c;
+  color: var(--ivory);
+  text-align: left;
+}
+.calendar-options > a:hover,
+.calendar-options > button:hover {
+  background: #ffffff18;
+}
+.calendar-options strong {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font: 500 20px/1.1 var(--serif);
+}
+.calendar-options strong svg {
+  width: 14px;
+  height: 14px;
+}
+.calendar-options > a > span,
+.calendar-options > button > span,
+.calendar-options-note {
+  font: 400 12px/1.45 "DM Sans", sans-serif;
+  color: #eadfc6;
+}
+.calendar-options-note {
+  text-align: center;
+  margin-top: 5px;
+  width: calc(100% - 56px);
+}
 .share-fallback {
   display: grid;
   gap: 10px;

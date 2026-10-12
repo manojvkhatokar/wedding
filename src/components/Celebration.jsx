@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import Reveal from "./Reveal";
 import { Ornament, Pin, Arrow } from "./Ornaments";
-import { wedding, downloadCalendar } from "../wedding";
+import { wedding, downloadCalendar, googleCalendarUrl } from "../wedding";
 
 export default function Celebration() {
   const [message, setMessage] = useState("");
   const [showShare, setShowShare] = useState(false);
+  const [showCalendar, setShowCalendar] = useState(false);
   const timer = useRef();
   const shareInput = useRef(null);
   useEffect(() => () => clearTimeout(timer.current), []);
@@ -95,12 +96,9 @@ export default function Celebration() {
       <Reveal>
         <div className="guest-actions">
           <button
-            onClick={() => {
-              downloadCalendar();
-              announce(
-                "Your calendar file is ready — both dates are included.",
-              );
-            }}
+            onClick={() => setShowCalendar((visible) => !visible)}
+            aria-expanded={showCalendar}
+            aria-controls="calendar-options"
           >
             <svg
               viewBox="0 0 24 24"
@@ -131,6 +129,29 @@ export default function Celebration() {
           </button>
         </div>
       </Reveal>
+      {showCalendar ? (
+        <div className="calendar-options" id="calendar-options">
+          <p className="calendar-options-title">Choose your calendar</p>
+          <a
+            href={googleCalendarUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <strong>Google Calendar <Arrow diagonal /></strong>
+            <span>Opens both dates together. Review and tap Save.</span>
+          </a>
+          <button
+            onClick={() => {
+              downloadCalendar();
+              announce("Calendar file downloaded. Open it to add both dates.");
+            }}
+          >
+            <strong>Calendar file (.ics) <span aria-hidden="true">↓</span></strong>
+            <span>Two separate events for Apple, Outlook, and other calendars.</span>
+          </button>
+          <p className="calendar-options-note">All-day until event times are shared.</p>
+        </div>
+      ) : null}
       {showShare ? (
         <div className="share-fallback">
           <label htmlFor="invitation-link">
