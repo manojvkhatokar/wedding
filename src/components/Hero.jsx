@@ -26,7 +26,7 @@ export default function Hero() {
     >
       <img
         className="toran"
-        src="/images/toran.webp"
+        src="/images/toran-floral.webp"
         alt=""
         fetchPriority="high"
       />

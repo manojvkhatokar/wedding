@@ -39,3 +39,5 @@ Auto-scroll: after the page load completes, allow a five-second reading pause, t
 Artwork order update: show the traditional bride and groom illustration beneath the names in the hero, then place the wide baraat illustration beneath the invitation copy. Keep full figures and car visible on narrow phones.
 
 Auto-scroll smoothness: the invitation content receives a fractional-pixel translation to fill the gaps between browser-rounded scroll positions. Fixed music and flower layers stay outside that transformed content. Manual scroll and anchor navigation clear the translation before resuming.
+
+Floral header revision: `public/images/toran-floral.webp` replaces the mango-leaf toran. Layered marigolds, jasmine strings, gold beads, and small brass bells form a fuller canopy and side drapes, with the center kept open above the invitation text. The earlier toran remains only as a historical asset.
