@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 
-const READING_DELAY = 5000;
+// The curtain reveal already gives guests a pause before the page is visible.
+const READING_DELAY = 900;
 const PIXELS_PER_SECOND = 70;
 const MANUAL_SCROLL_PAUSE = 900;
 

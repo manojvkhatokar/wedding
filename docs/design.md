@@ -46,4 +46,6 @@ Curtain reveal: a full-viewport burgundy and gold fabric cover appears on every 
 
 Curtain readability: a soft, dark backdrop blur sits behind the center content, with additional blur inside the monogram seal and tap prompt. The fabric folds remain visible around the text while the gold seam no longer crosses the lettering.
 
+Auto-scroll after the curtain: begin 900 ms after the curtain finishes opening, instead of restarting the old five-second reading delay. Continue at 70 pixels per second, while preserving manual-scroll priority and reduced-motion behavior.
+
 Falling flower density: reduce the fixed particle set from 72 to 36. Keep the existing varied positions, scroll-linked speed, and copy occlusion.
