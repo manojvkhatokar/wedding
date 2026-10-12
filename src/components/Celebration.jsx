@@ -20,8 +20,8 @@ export default function Celebration() {
   }
   async function share() {
     const data = {
-      title: "Manoj & Chethana · Our Wedding",
-      text: "Celebrate with us! Reception: 29 November · Wedding: 30 November 2026.",
+      title: "Manoj and Chethana Our Wedding",
+      text: "Celebrate with us Reception 29 November Wedding 30 November 2026",
       url: window.location.href.split("#")[0],
     };
     try {
@@ -31,7 +31,7 @@ export default function Celebration() {
       }
       if (navigator.clipboard?.writeText) {
         await navigator.clipboard.writeText(data.url);
-        announce("Invitation link copied. Share a little joy!");
+        announce("Invitation link copied Share a little joy");
         return;
       }
       setShowShare(true);
@@ -48,7 +48,7 @@ export default function Celebration() {
       <Reveal>
         <Ornament className="section-ornament" />
         <h2 id="celebration-heading">
-          Come for the love.<em>Stay for the celebration.</em>
+          Come for the love<em>Stay for the celebration</em>
         </h2>
         <Ornament className="small-ornament" />
       </Reveal>
@@ -59,7 +59,7 @@ export default function Celebration() {
               <div className="event-details">
                 <p className="event-label">
                   <time dateTime={event.date}>
-                    {event.weekday} · November {event.day}, 2026
+                    {event.weekday} November {event.day} 2026
                   </time>
                 </p>
                 <h3>{event.title}</h3>
@@ -110,7 +110,7 @@ export default function Celebration() {
               <rect x="4" y="5" width="16" height="16" rx="1" />
               <path d="M4 10h16M8 2v6M16 2v6" />
             </svg>
-            Save the dates <span>+</span>
+            Save the dates
           </button>
           <button onClick={share}>
             <svg
@@ -138,22 +138,22 @@ export default function Celebration() {
             rel="noopener noreferrer"
           >
             <strong>Google Calendar <Arrow diagonal /></strong>
-            <span>Opens both dates together. Review and tap Save.</span>
+            <span>Opens both dates together Review and tap Save</span>
           </a>
           <a href={appleCalendarUrl()}>
-            <strong>Apple Calendar (iPhone) <Arrow diagonal /></strong>
-            <span>Opens Calendar to subscribe to both dates.</span>
+            <strong>Apple Calendar for iPhone <Arrow diagonal /></strong>
+            <span>Opens Calendar to subscribe to both dates</span>
           </a>
           <button
             onClick={() => {
               downloadCalendar();
-              announce("Calendar file downloaded. Open it to add both dates.");
+              announce("Calendar file downloaded Open it to add both dates");
             }}
           >
-            <strong>Calendar file (.ics) <span aria-hidden="true">↓</span></strong>
-            <span>Two separate events for Outlook and other calendars.</span>
+            <strong>Calendar file</strong>
+            <span>Two separate events for Outlook and other calendars</span>
           </button>
-          <p className="calendar-options-note">All-day until event times are shared.</p>
+          <p className="calendar-options-note">Both dates stay all day until event times are shared</p>
         </div>
       ) : null}
       {showShare ? (
@@ -176,11 +176,11 @@ export default function Celebration() {
       <footer>
         <Reveal>
           <Ornament />
-          <p className="with-love">With love,</p>
-          <p className="footer-names">Manoj &amp; Chethana</p>
-          <p className="footer-message">Your presence is our joy.</p>
+          <p className="with-love">With love</p>
+          <p className="footer-names">Manoj and Chethana</p>
+          <p className="footer-message">Your presence is our joy</p>
           <a href="#home" className="back-top">
-            Back to the beginning ↑
+            Back to the beginning
           </a>
         </Reveal>
       </footer>

@@ -172,31 +172,11 @@ h1 {
   white-space: nowrap;
 }
 .weds {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
+  display: block;
+  text-align: center;
   font: italic 34px/1.1 var(--serif);
   padding: 9px 0 12px;
   color: var(--green);
-}
-.weds i {
-  width: 36px;
-  height: 1px;
-  background: var(--gold);
-  position: relative;
-}
-.weds i:before {
-  content: "✧";
-  font-size: 15px;
-  position: absolute;
-  top: -8px;
-  left: -8px;
-  color: var(--gold);
-}
-.weds i:last-child:before {
-  left: auto;
-  right: -8px;
 }
 .ornament {
   display: flex;
@@ -536,9 +516,6 @@ h2 em {
 }
 .guest-actions button:hover {
   color: #efc774;
-}
-.guest-actions button > span {
-  font-size: 18px;
 }
 .calendar-options {
   display: grid;

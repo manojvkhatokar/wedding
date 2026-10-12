@@ -14,10 +14,10 @@ export const wedding = {
       nextDate: "2026-11-30",
       day: "29",
       weekday: "Sunday",
-      description: "An evening of joy & togetherness.",
+      description: "An evening of joy and togetherness",
       image: "/images/reception-formal.webp",
       imageAlt:
-        "Illustrated groom in a black tuxedo and bride in an embroidered lehenga welcoming guests on a flower-decorated reception stage",
+        "Illustrated groom in a black tuxedo and bride in an embroidered lehenga welcoming guests on a reception stage decorated with flowers",
     },
     {
       id: "wedding",
@@ -26,7 +26,7 @@ export const wedding = {
       nextDate: "2026-12-01",
       day: "30",
       weekday: "Monday",
-      description: "Blessings. Traditions. Forever.",
+      description: "Blessings Traditions Forever",
       image: "/images/wedding-ceremony.webp",
       imageAlt:
         "Illustrated Marathi bride and groom seated beside the sacred fire during their wedding ceremony",
@@ -68,16 +68,16 @@ export function createCalendar(events = wedding.events, generatedStamp) {
       "VERSION:2.0",
       "PRODID:-//Manoj and Chethana//Wedding Invitation//EN",
       "CALSCALE:GREGORIAN",
-      "X-WR-CALNAME:Manoj & Chethana Wedding",
+      "X-WR-CALNAME:Manoj and Chethana Wedding",
       ...events.flatMap((event) => [
         "BEGIN:VEVENT",
         `UID:${event.id}-202611-manoj-chethana@wedding.invitation`,
         `DTSTAMP:${stamp}`,
         `DTSTART;VALUE=DATE:${event.date.replaceAll("-", "")}`,
         `DTEND;VALUE=DATE:${event.nextDate.replaceAll("-", "")}`,
-        `SUMMARY:${escapeIcs(`Manoj & Chethana — ${event.title}`)}`,
+        `SUMMARY:${escapeIcs(`Manoj and Chethana ${event.title}`)}`,
         `LOCATION:${escapeIcs(wedding.venue)}`,
-        "DESCRIPTION:We look forward to celebrating with you! Event timings will be shared by the families.",
+        "DESCRIPTION:We look forward to celebrating with you Event timings will be shared by the families",
         "END:VEVENT",
       ]),
       "END:VCALENDAR",
@@ -105,9 +105,9 @@ export function googleCalendarUrl() {
   const last = wedding.events.at(-1);
   const params = new URLSearchParams({
     action: "TEMPLATE",
-    text: "Manoj & Chethana — Reception & Wedding",
+    text: "Manoj and Chethana Reception and Wedding",
     dates: `${first.date.replaceAll("-", "")}/${last.nextDate.replaceAll("-", "")}`,
-    details: "Reception: Sunday, 29 November 2026\nWedding: Monday, 30 November 2026\nEvent times will be shared by the families.",
+    details: "Reception Sunday 29 November 2026\nWedding Monday 30 November 2026\nEvent times will be shared by the families",
     location: wedding.venue,
   });
   return `https://calendar.google.com/calendar/r/eventedit?${params}`;

@@ -26,13 +26,13 @@ export default function Invitation() {
       <Reveal>
         <Ornament className="section-ornament" />
         <h2 id="invitation-heading">
-          Two hearts.<em>One beautiful beginning.</em>
+          Two hearts<em>One beautiful beginning</em>
         </h2>
       </Reveal>
       <Reveal delay={0.1}>
         <p className="invitation-copy">
-          Together with our families, we invite you to celebrate our wedding —
-          with blessings, music, and a little dancing.
+          Together with our families we invite you to celebrate our wedding
+          with blessings music and a little dancing
         </p>
       </Reveal>
       <motion.div
@@ -41,14 +41,14 @@ export default function Invitation() {
       >
         <img
           src="/images/baraat-ivory.webp"
-          alt="A relaxed baraat with the groom in royal blue on a raised open-car seat, an umbrella attendant, dhol-tasha musicians, and friends in shirts and trousers"
+          alt="A relaxed baraat with the groom in royal blue on a raised open car seat with an umbrella attendant dhol tasha musicians and friends in shirts and trousers"
           width="1200"
           height="800"
           loading="lazy"
         />
       </motion.div>
       <Reveal>
-        <p className="tradition">A little tradition. A lot of love.</p>
+        <p className="tradition">A little tradition A lot of love</p>
         <Ornament />
       </Reveal>
     </section>

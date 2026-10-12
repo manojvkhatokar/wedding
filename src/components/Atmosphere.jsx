@@ -23,7 +23,7 @@ export default function Atmosphere() {
         if (disposed || error.name === "AbortError") return;
         setError(error.name === "NotAllowedError"
           ? ""
-          : "Music couldn’t load. Tap the music button to retry.");
+          : "Music could not load Tap the music button to retry");
       } finally {
         starting = false;
       }
@@ -31,7 +31,7 @@ export default function Atmosphere() {
     startMusic.current = play;
     const onPlay = () => { setPlaying(true); setError(""); };
     const onPause = () => setPlaying(false);
-    const onError = () => setError("Music couldn’t load. Tap the music button to retry.");
+    const onError = () => setError("Music could not load Tap the music button to retry");
     const onInteraction = (event) => {
       if (event.target instanceof Element && event.target.closest("[data-music-control]")) return;
       if (event.type === "keydown" && !["Enter", " ", "ArrowDown", "ArrowUp", "PageDown", "PageUp", "Home", "End"].includes(event.key)) return;

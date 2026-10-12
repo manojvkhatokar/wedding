@@ -40,7 +40,7 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1.5 }}
         >
-          <p>With Lord Ganesha’s blessings</p>
+          <p>Blessings of Lord Ganesha</p>
           <Ganesha />
         </motion.div>
         <div className="monogram" aria-label="Manoj and Chethana">
@@ -54,11 +54,7 @@ export default function Hero() {
           transition={{ duration: 1.3, delay: 0.15 }}
         >
           <span className="name">{wedding.groom}</span>
-          <span className="weds">
-            <i />
-            weds
-            <i />
-          </span>
+          <span className="weds">weds</span>
           <span className="name">{wedding.bride}</span>
         </motion.h1>
         <Ornament />
@@ -66,7 +62,7 @@ export default function Hero() {
       <div className="hero-couple">
         <img
           src="/images/couple-ivory.webp"
-          alt="Watercolor illustration of a Maharashtrian bride and groom in green nauvari and saffron pheta, wearing mundavalya and exchanging garlands"
+          alt="Watercolor illustration of a Maharashtrian bride and groom in green nauvari and saffron pheta wearing mundavalya and exchanging garlands"
           width="900"
           height="1125"
           fetchPriority="high"

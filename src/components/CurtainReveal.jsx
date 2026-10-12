@@ -45,7 +45,7 @@ export default function CurtainReveal({ onRevealed, reducedMotion }) {
         type="button"
         onClick={() => setOpening(true)}
         disabled={opening}
-        aria-label="Open Manoj and Chethana's wedding invitation"
+        aria-label="Open the wedding invitation for Manoj and Chethana"
       >
         <span className="curtain-panel curtain-panel--left" aria-hidden="true" />
         <span className="curtain-panel curtain-panel--right" aria-hidden="true" />
