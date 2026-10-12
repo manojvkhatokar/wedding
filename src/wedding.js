@@ -57,8 +57,8 @@ function foldLine(line) {
   return output;
 }
 
-export function createCalendar(events = wedding.events) {
-  const stamp = new Date()
+export function createCalendar(events = wedding.events, generatedStamp) {
+  const stamp = generatedStamp ?? new Date()
     .toISOString()
     .replace(/[-:]/g, "")
     .replace(/\.\d{3}Z$/, "Z");
@@ -68,6 +68,7 @@ export function createCalendar(events = wedding.events) {
       "VERSION:2.0",
       "PRODID:-//Manoj and Chethana//Wedding Invitation//EN",
       "CALSCALE:GREGORIAN",
+      "X-WR-CALNAME:Manoj & Chethana Wedding",
       ...events.flatMap((event) => [
         "BEGIN:VEVENT",
         `UID:${event.id}-202611-manoj-chethana@wedding.invitation`,
@@ -110,4 +111,8 @@ export function googleCalendarUrl() {
     location: wedding.venue,
   });
   return `https://calendar.google.com/calendar/r/eventedit?${params}`;
+}
+
+export function appleCalendarUrl() {
+  return `webcal://${window.location.host}/wedding-dates.ics`;
 }

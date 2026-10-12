@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import Reveal from "./Reveal";
 import { Ornament, Pin, Arrow } from "./Ornaments";
-import { wedding, downloadCalendar, googleCalendarUrl } from "../wedding";
+import { wedding, downloadCalendar, googleCalendarUrl, appleCalendarUrl } from "../wedding";
 
 export default function Celebration() {
   const [message, setMessage] = useState("");
@@ -140,6 +140,10 @@ export default function Celebration() {
             <strong>Google Calendar <Arrow diagonal /></strong>
             <span>Opens both dates together. Review and tap Save.</span>
           </a>
+          <a href={appleCalendarUrl()}>
+            <strong>Apple Calendar (iPhone) <Arrow diagonal /></strong>
+            <span>Opens Calendar to subscribe to both dates.</span>
+          </a>
           <button
             onClick={() => {
               downloadCalendar();
@@ -147,7 +151,7 @@ export default function Celebration() {
             }}
           >
             <strong>Calendar file (.ics) <span aria-hidden="true">↓</span></strong>
-            <span>Two separate events for Apple, Outlook, and other calendars.</span>
+            <span>Two separate events for Outlook and other calendars.</span>
           </button>
           <p className="calendar-options-note">All-day until event times are shared.</p>
         </div>

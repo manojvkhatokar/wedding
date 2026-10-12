@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Manoj and Chethana//Wedding Invitation//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:Manoj & Chethana Wedding
+BEGIN:VEVENT
+UID:reception-202611-manoj-chethana@wedding.invitation
+DTSTAMP:20261012T000000Z
+DTSTART;VALUE=DATE:20261129
+DTEND;VALUE=DATE:20261130
+SUMMARY:Manoj & Chethana — The Reception
+LOCATION:Sri Dharmastala Manjunatha Swamy Kalyana Mantapa
+DESCRIPTION:We look forward to celebrating with you! Event timings will be 
+ shared by the families.
+END:VEVENT
+BEGIN:VEVENT
+UID:wedding-202611-manoj-chethana@wedding.invitation
+DTSTAMP:20261012T000000Z
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261201
+SUMMARY:Manoj & Chethana — The Wedding
+LOCATION:Sri Dharmastala Manjunatha Swamy Kalyana Mantapa
+DESCRIPTION:We look forward to celebrating with you! Event timings will be 
+ shared by the families.
+END:VEVENT
+END:VCALENDAR

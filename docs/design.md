@@ -50,4 +50,6 @@ Auto-scroll after the curtain: begin 900 ms after the curtain finishes opening, 
 
 Calendar save flow: “Save the dates” opens two choices. Google Calendar opens one ready-to-save all-day event covering 29–30 November 2026, with both celebrations listed in the description and the venue prefilled. The `.ics` option still downloads two separate all-day events for other calendar apps. All-day wording is intentional until event times are available. The Google event editor URL follows Google's documented `action=TEMPLATE` link pattern.
 
+Apple Calendar option: iPhone guests can tap a `webcal://` link to the site's public `wedding-dates.ics` and confirm a read-only calendar subscription containing both dates. The static feed is generated from `src/wedding.js` before development and production builds, so the Vercel deployment serves the same event details with the correct calendar MIME type. Guests can still choose the one-time `.ics` download. Localhost webcal links cannot be tested on a separate phone; validate the subscription on the deployed HTTPS site with an iPhone.
+
 Falling flower density: reduce the fixed particle set from 72 to 36. Keep the existing varied positions, scroll-linked speed, and copy occlusion.
