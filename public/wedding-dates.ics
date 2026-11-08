@@ -10,8 +10,8 @@ DTSTART;VALUE=DATE:20261129
 DTEND;VALUE=DATE:20261130
 SUMMARY:Manoj and Chethana The Reception
 LOCATION:Sri Dharmastala Manjunatha Swamy Kalyana Mantapa
-DESCRIPTION:We look forward to celebrating with you Event timings will be s
- hared by the families
+DESCRIPTION:7 PM onwards at Sri Dharmastala Manjunatha Swamy Kalyana Mantap
+ a
 END:VEVENT
 BEGIN:VEVENT
 UID:wedding-202611-manoj-chethana@wedding.invitation
@@ -20,7 +20,7 @@ DTSTART;VALUE=DATE:20261130
 DTEND;VALUE=DATE:20261201
 SUMMARY:Manoj and Chethana The Wedding
 LOCATION:Sri Dharmastala Manjunatha Swamy Kalyana Mantapa
-DESCRIPTION:We look forward to celebrating with you Event timings will be s
- hared by the families
+DESCRIPTION:Muhurtham 9:20 AM to 9:55 AM at Sri Dharmastala Manjunatha Swam
+ y Kalyana Mantapa
 END:VEVENT
 END:VCALENDAR

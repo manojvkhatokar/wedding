@@ -1,4 +1,4 @@
-// All invitation details live here. Times were not provided; calendar events are all-day.
+// All invitation details live here. Calendar entries cover the full dates with times in their details.
 export const wedding = {
   groom: "Manoj V Khatokar",
   bride: "Chethana D",
@@ -14,6 +14,7 @@ export const wedding = {
       nextDate: "2026-11-30",
       day: "29",
       weekday: "Sunday",
+      timeLabel: "7 PM onwards",
       description: "An evening of joy and togetherness",
       image: "/images/reception-formal.webp",
       imageAlt:
@@ -26,6 +27,7 @@ export const wedding = {
       nextDate: "2026-12-01",
       day: "30",
       weekday: "Monday",
+      timeLabel: "Muhurtham 9:20 AM to 9:55 AM",
       description: "Blessings Traditions Forever",
       image: "/images/wedding-ceremony.webp",
       imageAlt:
@@ -77,7 +79,7 @@ export function createCalendar(events = wedding.events, generatedStamp) {
         `DTEND;VALUE=DATE:${event.nextDate.replaceAll("-", "")}`,
         `SUMMARY:${escapeIcs(`Manoj and Chethana ${event.title}`)}`,
         `LOCATION:${escapeIcs(wedding.venue)}`,
-        "DESCRIPTION:We look forward to celebrating with you Event timings will be shared by the families",
+        `DESCRIPTION:${escapeIcs(`${event.timeLabel} at ${wedding.venue}`)}`,
         "END:VEVENT",
       ]),
       "END:VCALENDAR",
@@ -107,7 +109,9 @@ export function googleCalendarUrl() {
     action: "TEMPLATE",
     text: "Manoj and Chethana Reception and Wedding",
     dates: `${first.date.replaceAll("-", "")}/${last.nextDate.replaceAll("-", "")}`,
-    details: "Reception Sunday 29 November 2026\nWedding Monday 30 November 2026\nEvent times will be shared by the families",
+    details: wedding.events
+      .map((event) => `${event.title} ${event.weekday} November ${event.day} 2026 ${event.timeLabel}`)
+      .join("\n"),
     location: wedding.venue,
   });
   return `https://calendar.google.com/calendar/r/eventedit?${params}`;

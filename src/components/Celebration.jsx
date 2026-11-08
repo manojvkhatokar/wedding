@@ -21,7 +21,7 @@ export default function Celebration() {
   async function share() {
     const data = {
       title: "Manoj and Chethana Our Wedding",
-      text: "Celebrate with us Reception 29 November Wedding 30 November 2026",
+      text: "Celebrate with us Reception 29 November 7 PM onwards Wedding Muhurtham 30 November 9:20 AM to 9:55 AM",
       url: window.location.href.split("#")[0],
     };
     try {
@@ -63,6 +63,7 @@ export default function Celebration() {
                   </time>
                 </p>
                 <h3>{event.title}</h3>
+                <p className="event-time">{event.timeLabel}</p>
                 <p>{event.description}</p>
               </div>
               <img
@@ -153,7 +154,7 @@ export default function Celebration() {
             <strong>Calendar file</strong>
             <span>Two separate events for Outlook and other calendars</span>
           </button>
-          <p className="calendar-options-note">Both dates stay all day until event times are shared</p>
+          <p className="calendar-options-note">Calendar entries cover both dates with timings in their details</p>
         </div>
       ) : null}
       {showShare ? (

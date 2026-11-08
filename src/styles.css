@@ -448,6 +448,11 @@ h2 em {
   font: 400 32px/1.15 var(--serif);
   margin: 4px 0;
 }
+.event-time {
+  font: 500 13px/1.4 "DM Sans", sans-serif;
+  color: #f0d398;
+  margin: 8px 0 5px;
+}
 .event-details > p:last-child {
   font: 400 15px/1.5 var(--serif);
   color: #ece8d7;
