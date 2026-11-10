@@ -88,7 +88,7 @@ export default function Atmosphere() {
   }
   return (
     <div className="atmosphere">
-      <audio ref={audio} src="/audio/wedding-dhol.mp3" autoPlay loop preload="auto" aria-hidden="true" />
+      <audio ref={audio} src="/audio/sita-kalyana.mp3" autoPlay loop preload="auto" aria-hidden="true" />
       <button
         data-music-control
         className={playing ? "sound-playing" : ""}

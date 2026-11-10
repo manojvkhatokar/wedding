@@ -1,6 +1,6 @@
 # Manoj & Chethana — Marathi wedding invitation
 
-A frontend-only React + Vite invitation designed for phones. Maharashtrian baraat and couple illustrations, animated marigold petals, scroll reveals, background dhol music, calendar downloads, and native mobile sharing. Larger screens retain the intimate phone-width composition.
+A frontend-only React + Vite invitation designed for phones. Maharashtrian baraat and couple illustrations, animated marigold petals, scroll reveals, background Sita Kalyana music, calendar downloads, and native mobile sharing. Larger screens retain the intimate phone-width composition.
 
 ## Run locally
 
