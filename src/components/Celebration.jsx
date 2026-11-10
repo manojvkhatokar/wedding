@@ -20,8 +20,8 @@ export default function Celebration() {
   }
   async function share() {
     const data = {
-      title: "Manoj and Chethana Our Wedding",
-      text: "Celebrate with us Reception 29 November 7 PM onwards Wedding Muhurtham 30 November 9:20 AM to 9:55 AM",
+      title: "✨Manoj V Khatokar and Chethana D - Wedding Invite✨",
+      text: "Reception on 29 November 2026 from 7 PM onwards and Muhurtham on 30 November 2026 from 9:20 AM to 9:55 AM",
       url: window.location.href.split("#")[0],
     };
     try {
