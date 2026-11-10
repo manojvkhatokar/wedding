@@ -1,0 +1,9 @@
+# Wedding link preview
+
+Asset: `public/images/wedding-preview-v1.jpg`, 1200 × 630 JPEG. Used by Open Graph and Twitter card metadata in `index.html`. The public image URL uses the production domain `https://manchethwedding.vercel.app`.
+
+Created with the built-in image generation tool using `public/images/couple-ivory.webp` as a style reference. The generated PNG was exported as a JPEG for social sharing. The invitation itself is unchanged.
+
+## Generation prompt
+
+Use case: ads-marketing. Asset type: static wedding website link preview thumbnail for WhatsApp and social sharing. Generate a polished wide landscape wedding invitation image, aspect ratio 1200:630. Use the supplied reference ONLY as supporting visual/style reference: recreate the same watercolor Maharashtrian couple in green nauvari sari and cream outfit with saffron pheta and mundavalya, exchanging floral garlands, on the right side of the image. They are illustrative characters, not portraits. Match the reference warm ivory backdrop, marigold and jasmine flower garlands, champagne fabric draping and antique gold brass decor, no trees. Elegant restrained floral border across the top and small floral corners. Left two thirds should have exceptionally legible large dark leaf-green classic serif typography with ample breathing room. Text verbatim on separate centered lines: 'Manoj V Khatokar' then a smaller 'and' then 'Chethana D' then 'Wedding Invite' then '29 and 30 November 2026'. Keep every name equally prominent and all text inside generous safe margins. Romantic Marathi wedding invitation, refined watercolor editorial illustration, warm ivory and antique gold with green and saffron accents. It must stay readable at a small messaging thumbnail size. No extra text, no watermark, no website UI, no screenshot, no trees. Opaque background.
